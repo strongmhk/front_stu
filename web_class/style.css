@@ -1,0 +1,33 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+.text-blue{
+  color : blue;
+  background-color: yellow;
+  text-align: center;
+}
+/* 두께, 스타일, 색깔 */
+.border-blue{
+  border: 3px solid blue; 
+}
+
+.img-size{
+  width : 200px;
+  height : 200px;
+}
+
+.margin-space{
+  margin-top: 40px;
+  margin-left: 100px;
+  margin-bottom: 40px;
+}
+
+/* 요소 안쪽 공간의 공백은  padding, 바깥쪽은 margin */
+
+.padding-space{
+  padding-top: 40px;
+  padding-left: 50px;
+}
+

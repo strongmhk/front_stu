@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+
+<head>
+  <!-- Load Plotly.js -->
+  <title>plotly</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+  <!-- Create a container for the plot -->
+  <div id="plot"></div>
+
+  <!-- Load the CO2 emissions data -->
+  <script>
+    Plotly.d3.csv("https://raw.githubusercontent.com/owid/co2-data/master/public/data/co2-emissions-tonnes-per-person.csv", function (err, data) {
+      var years = [];
+      var co2Emissions = [];
+
+      // Extract the year and CO2 emissions data
+      data.forEach(function (row) {
+        years.push(row.Year);
+        co2Emissions.push(row['CO2 emissions (tonnes per capita)']);
+      });
+
+      // Create the plot
+      var trace = {
+        x: years,
+        y: co2Emissions,
+        mode: 'lines',
+        type: 'scatter'
+      };
+      var layout = {
+        title: "CO2 Emissions Over Time",
+        xaxis: {
+          title: "Year"
+        },
+        yaxis: {
+          title: "CO2 Emissions (Tonnes per capita)"
+        }
+      };
+      Plotly.newPlot('plot', [trace], layout);
+    });
+  </script>
+</body>
+</html>
