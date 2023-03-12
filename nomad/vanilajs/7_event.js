@@ -5,4 +5,4 @@ function handleTitleClick(){
   // console.log("title was clicked!");
 }
 
-title.addEventListenerr("click", handleTitleClick);
+title.addEventListener("click", handleTitleClick);
